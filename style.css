@@ -1,0 +1,377 @@
+/* ===============================
+   기본 초기화 및 공통 설정
+================================= */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Pretendard', sans-serif;
+  color: #111;
+  background-color: #f8f8f8;
+  line-height: 1.6;
+}
+
+/* ===============================
+   헤더 (모든 페이지 공통)
+================================= */
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem 3rem;
+  border-bottom: 1px solid #dcdcdc;
+  background-color: #fff;
+  position: relative;
+}
+
+.header h1 {
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+}
+
+.logo {
+  text-decoration: none;
+  color: #444;
+  transition: color 0.2s ease;
+}
+
+.logo:hover {
+  color: #000;
+}
+
+.nav {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #000;
+  font-size: 14px;
+  font-weight: 500;
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+.nav a:hover {
+  color: #888;
+}
+
+.nav a.active {
+  color: #444;
+  font-weight: 600;
+}
+
+/* ===============================
+   Work, Archive, WIP 페이지 (공통)
+================================= */
+.work-section,
+.wip-section {
+  padding: 3rem; /* .work-section과 .wip-section 공통 규칙 */
+}
+
+/* --- Work & Archive 갤러리 --- */
+.work-section h2 {
+  font-size: 32px;
+  margin-bottom: 2rem;
+  font-weight: 600;
+}
+
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(460px, 1fr));
+  gap: 1.5rem;
+}
+
+.project {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  background-color: #eaeaea;
+}
+
+.project img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.4s ease;
+  filter: brightness(1) blur(0);
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: all 0.4s ease;
+}
+
+.overlay span {
+  color: white;
+  font-size: 21px;
+  letter-spacing: 0.05em;
+  font-weight: 500;
+}
+
+.project:hover img {
+  filter: brightness(0.7) blur(2px);
+  transform: scale(1.03);
+}
+
+.project:hover .overlay {
+  background: rgba(0, 0, 0, 0.3);
+  opacity: 1;
+}
+
+/* ===============================
+   INDEX 페이지
+================================= */
+.intro-section {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  padding: 6rem 3rem;
+}
+
+.intro-logo {
+  width: 140px;
+  height: 140px;
+  flex-shrink: 0;
+}
+
+.intro-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.intro-text h1 {
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.work-preview {
+  padding: 0 3rem 6rem 3rem;
+}
+
+.work-title-wrapper {
+  padding-bottom: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-top: 1px solid #dcdcdc;
+  padding-top: 2rem;
+}
+
+.work-title-wrapper h2 {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.project-item img {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.project-caption p {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #333;
+}
+
+.project-description p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #555;
+  margin-bottom: 1rem;
+}
+
+.project-description a {
+  font-size: 14px;
+  color: #333;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.project-description a:hover {
+  color: #000;
+}
+
+/* ===============================
+   Toolkit 페이지
+================================= */
+.toolkit-section {
+  padding: 6rem 3rem;
+}
+
+.awards-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 5rem;
+}
+
+.awards-title {
+  flex: 1;
+}
+
+.awards-title h2 {
+  font-size: 80px;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.awards-list {
+  flex: 2;
+  padding-top: 0.5rem;
+}
+
+.award-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid #dcdcdc;
+}
+
+.award-item .name {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.award-item .year {
+  font-size: 18px;
+  color: #777;
+  white-space: nowrap;
+  padding-left: 2rem;
+}
+
+/* ===============================
+   WIP 페이지 (갤러리 & 라이트박스)
+================================= */
+.wip-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.5rem;
+}
+
+.wip-gallery img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+  z-index: 1000;
+}
+
+.lightbox:target {
+  opacity: 1;
+  visibility: visible;
+}
+
+.lightbox-content {
+  max-width: 90%;
+  max-height: 85%;
+  border-radius: 4px;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 2rem;
+  right: 2.5rem;
+  font-size: 48px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 300;
+}
+
+/* ===============================
+   프로젝트 상세 페이지 (공통)
+================================= */
+.project-detail-section {
+  max-width: 1000px; 
+  margin: 0 auto;
+  padding: 3rem;
+}
+
+.project-title {
+  text-align: center;
+  padding: 4rem 0;
+}
+
+.project-title h1 {
+  font-size: 64px;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.project-title p {
+  font-size: 18px;
+  color: #666;
+}
+
+/* 상세 페이지 미디어 (공통) */
+.project-content img,
+.project-content video,
+.project-content-vertical img,
+.project-content-vertical video,
+.project-content iframe,
+.project-content-vertical iframe{
+  width: 100%;
+  height: 100%;
+  margin-bottom: 1.5rem;
+  border-radius: 4px;
+  object-fit: cover;
+}
+
+/* 가로형 (16:9) */
+.project-content img,
+.project-content video,
+.project-content iframe {
+  aspect-ratio: 16 / 9;
+  border: 0; /* 아이프레임의 기본 테두리 제거 */
+}
+
+/* 세로형 (9:16) */
+.project-content-vertical img,
+.project-content-vertical video,
+.project-content-vertical iframe {
+  aspect-ratio: 9 / 16;
+  border : 0;
+}
+
+/* 상세 페이지 텍스트 (공통) */
+.project-content p,
+.project-content-vertical p {
+  font-size: 18px;
+  line-height: 1.8;
+  color: #333;
+  margin-bottom: 4rem;
+}
