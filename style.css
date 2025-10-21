@@ -218,28 +218,28 @@ body {
   padding: 6rem 3rem;
 }
 
-.awards-container {
+.toolkit-container {
   display: flex;
   align-items: flex-start;
   gap: 5rem;
 }
 
-.awards-title {
+.toolkit-title {
   flex: 1;
 }
 
-.awards-title h2 {
+.toolkit-title h2 {
   font-size: 80px;
   font-weight: 600;
   line-height: 1;
 }
 
-.awards-list {
+.toolkit-list {
   flex: 2;
   padding-top: 0.5rem;
 }
 
-.award-item {
+.toolkit-item {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -247,12 +247,12 @@ body {
   border-bottom: 1px solid #dcdcdc;
 }
 
-.award-item .name {
+.toolkit-item .name {
   font-size: 18px;
   font-weight: 500;
 }
 
-.award-item .year {
+.toolkit-item .year {
   font-size: 18px;
   color: #777;
   white-space: nowrap;
